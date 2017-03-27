@@ -11,7 +11,6 @@ RUN yes | sdkmanager --licenses
 
 # Android NDK
 RUN sdkmanager "ndk-bundle"
-RUN sdkmanager "cmake;3.6.3155560"
 
 # Cleanup
 RUN apt-get clean -y && apt-get autoremove -y
