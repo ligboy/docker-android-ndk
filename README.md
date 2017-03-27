@@ -1,2 +1,2 @@
-docker-android
+docker-android-ndk
 ====================
