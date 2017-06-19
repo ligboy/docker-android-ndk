@@ -5,7 +5,6 @@ ENV ANDROID_NDK_HOME /opt/android-sdk/ndk-bundle
 
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}
 
-RUN apt-get update -qq && apt-get install -y --no-install-recommends build-essential
 # Accept all licenses before installing components.
 RUN yes | sdkmanager --licenses
 
@@ -13,8 +12,9 @@ RUN yes | sdkmanager --licenses
 RUN sdkmanager "ndk-bundle"
 
 # Cleanup
-RUN apt-get clean -y && apt-get autoremove -y
-RUN rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/*
+RUN apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/*
 
 # Go to workspace
 RUN mkdir -p /var/workspace
