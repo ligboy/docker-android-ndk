@@ -5,7 +5,7 @@ ENV ANDROID_NDK_HOME /opt/android-sdk/ndk-bundle
 
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}
 
-ENV ANDROID_NDK_VERSION r15
+ENV ANDROID_NDK_VERSION r16
 
 RUN mkdir -p $ANDROID_NDK_HOME \
         && cd /tmp \
